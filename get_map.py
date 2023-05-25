@@ -55,7 +55,7 @@ async def get_future_map(bot, ev: CQEvent, args):
 > 大逃杀: {br_map_zh}
 开始时间: {br_start_time}
 > 排位: {ranked_map_zh}
-开始时间: {br_start_time}
+开始时间: {ranked_start_time}
 > 竞技场: {arenas_map_zh}
 开始时间: {arenas_start_time}
 """.strip()

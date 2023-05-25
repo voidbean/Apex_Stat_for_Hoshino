@@ -21,7 +21,7 @@ async def get_map(bot, ev: CQEvent, args):
     br_remaining = rep_json["battle_royale"]["current"]["remainingMins"]  # 大逃杀剩余时间
     
     ranked_map_en = rep_json["ranked"]["current"]["map"].lower()  # 排位的名字英文
-    ranked_map_zh = map_name_dict["br"].get(br_map_en, br_map_en)  # 排位的名字中文
+    ranked_map_zh = map_name_dict["br"].get(ranked_map_en, ranked_map_en)  # 排位的名字中文
     ranked_remaining = rep_json["ranked"]["current"]["remainingMins"]  # 排位剩余时间
 
     content = f"""
@@ -46,8 +46,8 @@ async def get_future_map(bot, ev: CQEvent, args):
     br_map_zh = map_name_dict["br"].get(br_map_en, br_map_en)  # 大逃杀的名字中文
     br_start_time = recalculate_timezone(rep_json["battle_royale"]["next"]["readableDate_start"])
     
-    ranked_map_en = rep_json["ranked"]["current"]["map"].lower()  # 排位的名字英文
-    ranked_map_zh = map_name_dict["br"].get(br_map_en, br_map_en)  # 排位的名字中文
+    ranked_map_en = rep_json["ranked"]["next"]["map"].lower()  # 排位的名字英文
+    ranked_map_zh = map_name_dict["br"].get(ranked_map_en, ranked_map_en)  # 排位的名字中文
     ranked_start_time = recalculate_timezone(rep_json["ranked"]["next"]["readableDate_start"])  # 排位剩余时间
 
     content = f"""
